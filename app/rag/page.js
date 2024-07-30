@@ -63,7 +63,7 @@ const Chat = () => {
     }, [toast]);
 
     const fetchContent = async (query) => {
-        const url = 'http://ec2-65-2-169-234.ap-south-1.compute.amazonaws.com/rag';
+        const url = 'http://ec2-52-66-203-7.ap-south-1.compute.amazonaws.com/rag';
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -157,7 +157,7 @@ const Chat = () => {
 
                     </Box>
 
-                        <Box transition={"height"} bg="" width="full" p={4} borderWidth="1px" borderRadius="md" boxShadow="md">
+                        <Box transition={"height"} width="full" p={4} borderWidth="1px" borderRadius="md" boxShadow="md">
                             <Box display='flex' justifyContent={'space-between'}>
                                 <strong>Response : </strong>{isQues &&
                                     <CopyIcon cursor={'pointer'} onClick={() => handleCopy(content)} />}

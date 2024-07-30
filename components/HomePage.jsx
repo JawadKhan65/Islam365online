@@ -58,8 +58,8 @@ const Home = () => {
 
     return (
         <>
-            <Box width="100vw" pb={2}>
-                <Container maxW="container.xl">
+            <Box width="100vw" position={'absolute'} className='background'>
+                <Container maxW="container.xl" position={'relative'}>
                     <Flex direction="column" align="center" justify="center"
                         width="100%"
                         height="auto"

@@ -56,7 +56,7 @@ const Navbar = () => {
                         <MenuList>
                             <MenuItem onClick={() => { router.push('/contact/contact-form') }}>Contact Form</MenuItem>
                             <Menu>
-                                <MenuButton as={Button} rightIcon={<FaChevronDown />}>
+                                <MenuButton as={Button} colorScheme={'transparent'} color="black" rightIcon={<FaChevronDown />}>
                                     Social Media Links
                                 </MenuButton>
                                 <MenuList>
@@ -118,7 +118,7 @@ const Navbar = () => {
                                 <MenuItem onClick={() => { router.push('/contact/contact-form') }}>Contact Form</MenuItem>
 
                                 <Menu>
-                                    <MenuButton m={2} as={Button} rightIcon={<FaChevronDown />}>
+                                    <MenuButton m={2} as={Button} color="black" colorScheme={'transparent'} rightIcon={<FaChevronDown />}>
                                         Social Media Links
                                     </MenuButton>
                                     <MenuList>

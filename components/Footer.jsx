@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <Box
 
-            bg="linear-gradient(-45deg, #45caff 20%, #ff1b6b 80%)"
+            bg="linear-gradient(90deg, #45caff 20%, #ff1b6b 20%)"
             color="white"
 
 

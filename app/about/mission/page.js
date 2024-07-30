@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 const Missions = () => {
     return (
         <>
-            <Box width="100vw" pb={2} position="relative">
+            <Box width="100vw" position="relative">
                 <Box bg="#08b7cf" position="relative" overflow="hidden">
 
                     <Container maxW="container.xl" py={20}>
