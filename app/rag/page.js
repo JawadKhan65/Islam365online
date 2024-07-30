@@ -63,13 +63,15 @@ const Chat = () => {
     }, [toast]);
 
     const fetchContent = async (query) => {
-        const url = 'http://ec2-52-66-203-7.ap-south-1.compute.amazonaws.com/rag';
+        const url = '/api/proxy/rag';
+        console.log('Fetching content from:', url);
         try {
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
                 body: JSON.stringify({ 'query': query })
             });
