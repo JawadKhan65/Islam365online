@@ -50,13 +50,13 @@ const Chat = () => {
             toast({
                 title: "Feedback Reminder",
                 description: 'Give feedback to improve the response. Your feedback will help us a lot. Form is available in the contact section.',
-                duration: 5000,
+                duration: 3000,
                 status: 'info',
                 isClosable: true,
-                position: 'bottom-left',
+                position: 'top',
                 colorScheme: 'pink'
             });
-        }, 30000);
+        }, 60000);
 
         // Cleanup interval on component unmount
         return () => clearInterval(interval);
