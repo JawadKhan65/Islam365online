@@ -54,7 +54,7 @@ const Chat = () => {
                 status: 'info',
                 isClosable: true,
                 position: 'top',
-                colorScheme: 'pink'
+                colorScheme: 'pink',
             });
         }, 60000);
 
@@ -71,7 +71,7 @@ const Chat = () => {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'X-Requested-With': 'XMLHttpRequest' // for proxy
                 },
                 body: JSON.stringify({ 'query': query })
             });
@@ -143,7 +143,7 @@ const Chat = () => {
                             <Heading className="gradient-clip m-2">
                                 Islam-365
                             </Heading> : <Heading className="gradient-clip m-2">
-                                Start Chat about Islam with Islam-365RAG
+                                Start Chat about Islam with Islam-365
                             </Heading>
                     }
                 </Box>
