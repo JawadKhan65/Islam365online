@@ -7,8 +7,11 @@ import { useToast } from "@chakra-ui/react";
 import { CopyIcon } from "@chakra-ui/icons";
 import Loading from "@/components/Loading";
 import DocumentsList from "@/components/Document";
+import { useRouter } from "next/navigation";
+
 
 const Chat = () => {
+    const router = useRouter()
     const toast = useToast();
     const [content, setContent] = useState([]);
     const [response, setResponse] = useState('');
@@ -55,8 +58,22 @@ const Chat = () => {
                 isClosable: true,
                 position: 'top',
                 colorScheme: 'pink',
+                render: () => (
+                    <Box
+                        color="white"
+                        p={3}
+                        bg="pink.500"
+                        borderRadius="md"
+                        onClick={() => router.push('/contact/contact-form')}
+                        cursor="pointer"
+                    >
+                        <strong>Feedback Reminder Click here to go to feedback page</strong><br></br>
+                        Give feedback to improve the response. Your feedback will help us a lot. Form is available in the contact section.
+                    </Box>
+                ),
+                cursor: 'pointer',
             });
-        }, 60000);
+        }, 40000);
 
         // Cleanup interval on component unmount
         return () => clearInterval(interval);
