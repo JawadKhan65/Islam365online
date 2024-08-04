@@ -116,19 +116,21 @@ const DocumentsList = ({ documents }) => {
     }, [documents]);
 
     return (
-        <VStack spacing={4} align="stretch">
-            <Heading m={2} as={'h2'} fontSize={'lg'}>
-                <span className="text-fuchsia-600">Fetched :</span> Resources | References | Others
-            </Heading>
-            {docs.map((doc, index) => (
-                <DocumentCard
-                    key={index}
-                    content={doc.content}
-                    page={doc.page}
-                    source={doc.source}
-                />
-            ))}
-        </VStack>
+        <>
+            <VStack spacing={4} align="stretch">
+                <Heading m={2} as={'h2'} fontSize={'lg'}>
+                    <span className="text-fuchsia-600">Fetched :</span> Resources | References | Others
+                </Heading>
+                {docs.map((doc, index) => (
+                    <DocumentCard
+                        key={index}
+                        content={doc.content}
+                        page={doc.page}
+                        source={doc.source}
+                    />
+                ))}
+            </VStack>
+        </>
     );
 };
 

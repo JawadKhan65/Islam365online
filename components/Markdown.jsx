@@ -5,7 +5,7 @@ import TypingAnimation from './TypingAnimation';
 
 const MarkdownRenderer = ({ content }) => {
     return (
-        <div className="markdown-content overflow-scroll">
+        <div className="markdown-content overflow-auto">
             <ReactMarkdown>{content}</ReactMarkdown>
         </div>
     );

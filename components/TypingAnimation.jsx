@@ -9,8 +9,8 @@ const blink = keyframes`
 `;
 
 const TypeWriterContainer = styled.div`
-  font-family: 'Courier New', Courier, monospace;
-  font-size: clamp(1.7vh, 2.88vw, 3.1vh); /* Responsive font size */
+  font-family: 'open sans', sans-serif;
+  font-size: clamp(1.7vh, 2.8vw, 3.1vh); /* Responsive font size */
   display: flex;
   align-items: start;
   width: 100%;

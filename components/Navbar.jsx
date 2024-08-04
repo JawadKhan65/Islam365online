@@ -16,32 +16,39 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { FaChevronDown } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+// import { startDriver } from "./utils/driver";
+import { useEffect } from "react";
 
 const Navbar = () => {
+    // useEffect(() => {
+    //     startDriver()
+    // })
+
     const router = useRouter();
     const { isOpen, onToggle } = useDisclosure();
     const display = useBreakpointValue({ base: "none", md: "flex" });
 
     return (
-        <Box fontFamily="sans-serif" width="100vw">
+        <Box className="page-header" fontFamily="sans-serif" width="100vw">
             <Flex
                 as="nav"
                 align="center"
                 justify="space-between"
-                padding="1rem"
+                padding={2}
                 bg="transparent"
                 boxShadow="sm"
                 position="sticky"
                 top="0"
                 zIndex="1000"
+
             >
                 <Text cursor="pointer" className="gradient-clip" fontSize="xl" fontWeight="bold" onClick={() => { router.push('/') }}>
                     Islam365.online
                 </Text>
                 <Flex display={display}>
                     <Button color="gray.900" colorScheme="transparent" onClick={() => { router.push('/') }}>Home</Button>
-                    <Menu>
-                        <MenuButton colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                    <Menu >
+                        <MenuButton className="about" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                             About
                         </MenuButton>
                         <MenuList>
@@ -49,8 +56,8 @@ const Navbar = () => {
                             <MenuItem onClick={() => { router.push('/about/about-us') }}>About Us</MenuItem>
                         </MenuList>
                     </Menu>
-                    <Menu>
-                        <MenuButton colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                    <Menu >
+                        <MenuButton className="contact" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                             Contact
                         </MenuButton>
                         <MenuList>
@@ -68,8 +75,8 @@ const Navbar = () => {
 
                         </MenuList>
                     </Menu>
-                    <Menu>
-                        <MenuButton colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                    <Menu >
+                        <MenuButton className="content" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                             Age Wise Content
                         </MenuButton>
                         <MenuList>
@@ -78,8 +85,9 @@ const Navbar = () => {
                             <MenuItem onClick={() => { router.push('/elders') }}>Elders</MenuItem>
                         </MenuList>
                     </Menu>
-                    <Menu>
+                    <Menu >
                         <MenuButton
+                            className="additional"
                             color="gray.900" colorScheme="transparent" as={Button} rightIcon={<FaChevronDown />}>
                             Additionals
                         </MenuButton>
@@ -102,7 +110,7 @@ const Navbar = () => {
                     <Flex direction="column" gap="2" align="start">
                         <Button color="gray.900" colorScheme="transparent" onClick={() => { router.push('/') }}>Home</Button>
                         <Menu>
-                            <MenuButton colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                            <MenuButton className="about" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                                 About
                             </MenuButton>
                             <MenuList>
@@ -111,7 +119,7 @@ const Navbar = () => {
                             </MenuList>
                         </Menu>
                         <Menu>
-                            <MenuButton colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                            <MenuButton className="contact" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                                 Contact
                             </MenuButton>
                             <MenuList>
@@ -132,8 +140,8 @@ const Navbar = () => {
                             </MenuList>
                         </Menu>
 
-                        <Menu>
-                            <MenuButton colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                        <Menu >
+                            <MenuButton className="content" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                                 Age Wise Content
                             </MenuButton>
                             <MenuList>
@@ -142,8 +150,8 @@ const Navbar = () => {
                                 <MenuItem onClick={() => { router.push('/elders') }}>Elders</MenuItem>
                             </MenuList>
                         </Menu>
-                        <Menu>
-                            <MenuButton colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                        <Menu >
+                            <MenuButton className="additional" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                                 Additionals
                             </MenuButton>
                             <MenuList>

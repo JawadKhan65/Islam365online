@@ -1,13 +1,15 @@
 'use client'
 import { Box, Text, Flex, Link, IconButton } from "@chakra-ui/react";
 import { FaFacebook, FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Footer = () => {
+
     return (
         <Box
+            className=".footer"
 
-            bg="linear-gradient(90deg, #45caff 20%, #ff1b6b 20%)"
+            bg="linear-gradient(300deg,#f614fa, #fa1442 , #ff1b6b )"
             color="white"
 
 

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* globals.css */
+
 body {
   font-family: 'sans-serif';
   margin: 0;
@@ -16,8 +16,48 @@ body {
   width: 100%;
   overflow: scroll;
   overflow-x: hidden;
-  /* Prevents scrollbars if the gradient is larger than the viewport */
+
+
 }
+
+
+
+* {
+  scrollbar-width: thin;
+
+
+  scrollbar-color: #4a4a4a #dfdede;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 50%;
+  border: 1px;
+
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border: 1px;
+  border-radius: 50%;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border: 1px;
+  border-radius: 50%;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #929191;
+  border-radius: 50%;
+  border: 1px;
+
+}
+
+
 
 /* .background {
 

@@ -8,9 +8,11 @@ import { CopyIcon } from "@chakra-ui/icons";
 import Loading from "@/components/Loading";
 import DocumentsList from "@/components/Document";
 import { useRouter } from "next/navigation";
+import ChatBar from "@/components/ChatBar";
 
 
 const Chat = () => {
+    const [view, setView] = useState(false)
     const router = useRouter()
     const toast = useToast();
     const [content, setContent] = useState([]);
@@ -32,6 +34,14 @@ const Chat = () => {
             position: 'top-right'
         })
     }
+
+    const toggleView = () => {
+        if (view === false) {
+            setView(true)
+        } else {
+            setView(false)
+        }
+    }
     useEffect(() => {
         if (response != '') {
 
@@ -46,7 +56,7 @@ const Chat = () => {
         }
 
 
-    }, [response])
+    }, [response, toast])
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -152,7 +162,7 @@ const Chat = () => {
     };
 
     return (
-        <Box height="100vh" display="flex" flexDirection="column">
+        <Box height="auto" maxH={'100vh'} display="flex" flexDirection="column">
             <HStack justifyContent="center" mt={4}>
                 <Box>
                     {
@@ -165,7 +175,7 @@ const Chat = () => {
                     }
                 </Box>
             </HStack>
-            <Box flex="1" overflowY="auto" pb="80px">
+            <Box flex="1" overflowY="auto" pb="100px">
 
 
                 <VStack width="full" spacing={4} p={4} align="stretch">
@@ -191,17 +201,18 @@ const Chat = () => {
                                         mt={4}
                                         borderWidth="1px"
                                         borderRadius="lg"
+                                        border={'none'}
 
                                         fontFamily={'initial'}
 
                                     >
-                                        <Heading m={2} fontSize={'md'} as={'h2'}>
-                                            GENERATED RESPONSE ON THE CONTEXT
-                                        </Heading>
+
                                         <MarkdownRenderer content={response} />
 
                                     </Box>
-                                    <DocumentsList documents={content} />
+                                    <Button width={'full'} onClick={() => toggleView()} >{view === false ? 'View Resource and References' : 'Hide Resource and References'}</Button>
+
+                                    {view && <DocumentsList documents={content} view={view} />}
 
                                 </>
 
@@ -213,32 +224,7 @@ const Chat = () => {
             </Box>
 
             <Box position="fixed" bottom={0} width="full" p={4} bg="transparent" boxShadow="md">
-                <Flex className="rounded-lg" bg={'gray.100'} alignItems="center" width="full" maxW="container.md" mx="auto" px={4}>
-                    <Textarea
-                        border={'none'}
-                        p={2}
-                        value={query}
-                        onChange={handleChange}
-                        onKeyDown={handleKeyDown}
-                        placeholder="Type your question..."
-                        flex="1"
-                        fontWeight="bold"
-                        width={'auto'}
-                        mr={3}
-                        resize="none"
-                        color="black"
-                        focusBorderColor="transparent"
-                        height="48px" // Set the height of the Textarea
-                    />
-                    <Button
-                        isDisabled={loading} // Correctly control the disabled state
-                        colorScheme="purple"
-                        onClick={() => handleSend(query)}
-                        height="48px" // Match the height of the Textarea
-                    >
-                        Send
-                    </Button>
-                </Flex>
+                <ChatBar query={query} handleChange={handleChange} handleKeyDown={handleKeyDown} loading={loading} />
             </Box>
 
         </Box>
