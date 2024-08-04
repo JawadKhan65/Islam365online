@@ -160,7 +160,7 @@ const Chat = () => {
                             <Heading className="gradient-clip m-2">
                                 Islam-365
                             </Heading> : <Heading className="gradient-clip m-2">
-                                Start Chat about Islam with Islam-365
+                                Start Chat with Islam-365
                             </Heading>
                     }
                 </Box>
