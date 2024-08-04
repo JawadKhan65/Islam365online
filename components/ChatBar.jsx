@@ -3,8 +3,9 @@ import { Flex, Box, Button, Textarea } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@chakra-ui/icons";
 
 const ChatBar = ({ query, handleChange, handleKeyDown, loading }) => {
+
     return <>
-        <Flex height={'12vh'} className="rounded-lg" bg={'gray.100'} alignItems="center" width="80vw" maxW="container.md" mx="auto" px={4}>
+        <Flex className="rounded-lg" bg={'gray.100'} alignItems="center" width="80vw" maxW="container.md" mx="auto" px={4}>
             <Textarea
                 border={'none'}
                 p={2}

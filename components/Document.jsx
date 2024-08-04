@@ -62,7 +62,7 @@ const DocumentCard = ({ content, page, source }) => {
     const onSourceClick = () => {
         toast({
             title: "Book View",
-            description: "Viewing the Book. Please Wait it may take a while to Load...",
+            description: "Loading the Book. Please Wait it may take a while to Load...",
             status: "info",
             duration: 3000,
             colorScheme: "pink",

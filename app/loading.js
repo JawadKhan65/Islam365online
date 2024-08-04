@@ -6,14 +6,14 @@ export default function Loading() {
     return (
         <Box
             display="flex"
-            height="100vh"
-            width="100vw"
+            height="auto"
+            width="auto"
             justifyContent="center"
             alignItems="center"
         >
             <Box
-                width="100px"
-                height="100px"
+                width="auto"
+                height="auto"
                 position="relative"
             >
                 <Image

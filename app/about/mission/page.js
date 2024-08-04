@@ -1,9 +1,15 @@
 'use client';
 import React from 'react';
-import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Container, Button, Flex, Heading, Text } from '@chakra-ui/react';
 import Footer from '@/components/Footer';
+import { useRouter } from 'next/navigation';
+import { ChatIcon } from '@chakra-ui/icons';
 
 const Missions = () => {
+    const router = useRouter()
+    const handleChatClick = () => {
+        router.push('/rag');
+    }
     return (
         <>
             <Box width="100vw" position="relative">
@@ -68,22 +74,27 @@ const Missions = () => {
                         </Flex>
                     </Container>
                 </Box>
+                <Box position="fixed" bottom={4} left={4} zIndex="1">
+                    <Button
+                        className='chat'
+                        bg="linear-gradient(90deg,#2d302f,#f50f3d,#ff54ca )"
+                        color={'white'}
+                        onClick={handleChatClick}
+                        _hover={{
+                            bg: "linear-gradient(90deg,#ba4cf5,#f50f3d,#ff54ca )",
+
+                            transition: 'transform 0.3s',
+                            fontWeight: 600,
+                        }}
+                        fontFamily="sans-serif"
+                    >
+                        <ChatIcon mr={1} /> Chat with Islam365 GPT
+                    </Button>
+                </Box>
 
                 <Footer />
             </Box>
-            <style jsx global>{`
-                @keyframes moveWave {
-                    0% {
-                        transform: translateX(0) translateY(0);
-                    }
-                    50% {
-                        transform: translateX(-50px) translateY(10px);
-                    }
-                    100% {
-                        transform: translateX(0) translateY(0);
-                    }
-                }
-            `}</style>
+
         </>
     );
 };

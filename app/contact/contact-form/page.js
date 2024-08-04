@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { Box, Container, Flex, Heading, Text, Input, Textarea, Button, FormControl, FormLabel, useToast } from '@chakra-ui/react';
 import Footer from '@/components/Footer';
-
+import { ChatIcon } from '@chakra-ui/icons';
+import { useRouter } from 'next/navigation';
 const ContactUs = () => {
     const toast = useToast();
     const [formData, setFormData] = useState({
@@ -10,6 +11,10 @@ const ContactUs = () => {
         email: '',
         message: ''
     });
+    const router = useRouter()
+    const handleChatClick = () => {
+        router.push('/rag');
+    }
 
     const handleChange = (e) => {
         setFormData({
@@ -123,13 +128,31 @@ const ContactUs = () => {
 
                                         />
                                     </FormControl>
-                                    <Button type="submit" colorScheme="purple" size="lg" width="full">
+                                    <Button _hover={{
+                                        bg: 'linear-gradient(90deg,#f542d4,#3c1053)',
+                                    }} color={'white'} type="submit" bg={'linear-gradient(90deg,#ad5389,#3c1053)'} size="lg" width="full">
                                         Send Message
                                     </Button>
                                 </form>
                             </Box>
                         </Flex>
                     </Container>
+                </Box>
+                <Box position="fixed" bottom={4} left={4} zIndex="1">
+                    <Button
+                        className='chat'
+                        bg="linear-gradient(90deg,#2d302f,#f50f3d,#ff54ca )"
+                        color={'white'}
+                        onClick={handleChatClick}
+                        _hover={{
+                            bg: "linear-gradient(90deg,#ba4cf5,#f50f3d,#ff54ca )",
+                            transition: 'transform 0.3s',
+                            fontWeight: 600,
+                        }}
+                        fontFamily="sans-serif"
+                    >
+                        <ChatIcon mr={1} /> Chat with Islam365 GPT
+                    </Button>
                 </Box>
 
                 <Footer />

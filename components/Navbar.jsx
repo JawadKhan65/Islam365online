@@ -94,7 +94,7 @@ const Navbar = () => {
                         <MenuList>
                             <MenuItem onClick={() => { router.push('/resources') }}>Resources</MenuItem>
                             <MenuItem onClick={() => { router.push('/prayer-times') }}>Prayer Times</MenuItem>
-                            <MenuItem onClick={() => { router.push('/blog') }}>Blog</MenuItem>
+                            <MenuItem onClick={() => { router.push('/additionals/blog') }}>Blog</MenuItem>
                         </MenuList>
                     </Menu>
                 </Flex>
@@ -157,7 +157,7 @@ const Navbar = () => {
                             <MenuList>
                                 <MenuItem onClick={() => { router.push('/resources') }}>Resources</MenuItem>
                                 <MenuItem onClick={() => { router.push('/prayer-times') }}>Prayer Times</MenuItem>
-                                <MenuItem onClick={() => { router.push('/blog') }}>Blog</MenuItem>
+                                <MenuItem onClick={() => { router.push('/additionals/blog') }}>Blog</MenuItem>
                             </MenuList>
                         </Menu>
                     </Flex>

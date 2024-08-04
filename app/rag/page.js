@@ -8,7 +8,9 @@ import { CopyIcon } from "@chakra-ui/icons";
 import Loading from "@/components/Loading";
 import DocumentsList from "@/components/Document";
 import { useRouter } from "next/navigation";
-import ChatBar from "@/components/ChatBar";
+;
+import { ArrowRightIcon } from "@chakra-ui/icons";
+
 
 
 const Chat = () => {
@@ -141,6 +143,7 @@ const Chat = () => {
             console.log("Sending query:", q);
             setPrev(q);
             setIsQues(true);
+
         }
     };
 
@@ -161,6 +164,41 @@ const Chat = () => {
         }
     };
 
+
+    const addBlog = async (query, content_) => {
+
+        const url = '/api/proxy/blog';
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+
+            },
+            body: JSON.stringify({
+                "query": query,
+                "response": content_
+            }),
+        }
+        )
+
+
+        if (!response.ok) {
+            console.log(`HTTP error! status: ${response.status}`);
+        }
+        console.log('Received response:', response);
+
+    }
+    const [blogAdded, setBlogAdded] = useState(false);
+
+    useEffect(() => {
+        if (response !== '' && !blogAdded) {
+            addBlog(prev, response);
+            setBlogAdded(true);
+        }
+    }, [response, prev, blogAdded]);
+
     return (
         <Box height="auto" maxH={'100vh'} display="flex" flexDirection="column">
             <HStack justifyContent="center" mt={4}>
@@ -175,7 +213,7 @@ const Chat = () => {
                     }
                 </Box>
             </HStack>
-            <Box flex="1" overflowY="auto" pb="100px">
+            <Box flex="1" overflowY="auto" pb="150px">
 
 
                 <VStack width="full" spacing={4} p={4} align="stretch">
@@ -194,6 +232,7 @@ const Chat = () => {
 
                             </Box>
                             {isQues && loading ? (
+
                                 <Loading />
                             ) : (
                                 <>
@@ -224,8 +263,41 @@ const Chat = () => {
             </Box>
 
             <Box position="fixed" bottom={0} width="full" p={4} bg="transparent" boxShadow="md">
-                <ChatBar query={query} handleChange={handleChange} handleKeyDown={handleKeyDown} loading={loading} />
+
+                <Flex className="rounded-lg" bg={'gray.100'} alignItems="center" width="80vw" maxW="container.md" mx="auto" px={4}>
+                    <Textarea
+                        border={'none'}
+                        p={2}
+                        value={query}
+                        onChange={handleChange}
+                        onKeyDown={handleKeyDown}
+                        placeholder="Type your question..."
+                        flex="1"
+                        fontWeight="semi-bold"
+                        width={'auto'}
+                        mr={3}
+                        resize="none"
+                        color="black"
+                        focusBorderColor="transparent"
+                        alignContent={'center'}
+                        fontFamily={'open sans, sans-serif'}
+                    // height="10vh" // Set the height of the Textarea
+                    />
+                    <Button
+                        isDisabled={loading} // Correctly control the disabled state
+                        colorScheme="gray"
+                        bg={'gray.50'}
+                        onClick={() => handleSend(query)}
+                        height="48px" // Match the height of the Textarea
+                    >
+
+                        <ArrowRightIcon />
+                    </Button>
+                </Flex>
+
             </Box>
+
+
 
         </Box>
     );
