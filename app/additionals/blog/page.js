@@ -14,7 +14,7 @@ export default function Home() {
     const [hasMore, setHasMore] = useState(true);
 
     const fetchContent = async (page) => {
-        const url = `/api/proxy/blog?page=${page}&limit=5`; // Adjust the limit as needed
+        const url = `/api/proxy/blog?page=${page}&limit=10`; // Adjust the limit as needed
         const res = await fetch(url, {
             method: 'GET',
             headers: {
@@ -70,12 +70,15 @@ export default function Home() {
         if (hasMore) {
             setPage((prevPage) => prevPage + 1);
         }
+        window.scrollTo(0, 0)
     };
 
     const handlePrevPage = () => {
         if (page > 1) {
             setPage((prevPage) => prevPage - 1);
         }
+        window.scrollTo(0, 0)
+
     };
 
     return (
