@@ -9,8 +9,8 @@ const driverObj = driver({
         { element: '.about', popover: { title: 'About', description: 'Explore About us.' } },
         { element: '.contact', popover: { title: 'Our Contacts here', description: 'See how you can contact us and know about us.' } },
         { element: '.content', popover: { title: 'Content', description: 'Wide range of content we have here.' } },
-        { element: '.additional', popover: { title: 'Additional resources', description: 'Additional resources that can help us.' } },
-        { element: '.chat', popover: { title: 'Start Chat with the Chatbot', description: 'Chat about Islam with out Islam365 GPT.' } },
+        { element: '.additional', popover: { title: 'Additional resources', description: 'Additional resources that can help.' } },
+        { element: '.chat', popover: { title: 'Start Chat with the Chatbot', description: 'Chat about Islam with our Islam365 GPT.' } },
         {
             element: '.sidebar1', popover: {
                 title: 'AI-Powered Learning', description: 'Discover personalized learning experiences tailored to your interests and age group.Our platform offers a variety of resources and interactive content to help you understand Islam in a way that suits you best.Whether you are new to Islam or looking to deepen your knowledge, we have something for everyone.'
