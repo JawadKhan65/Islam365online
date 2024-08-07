@@ -16,7 +16,6 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { FaChevronDown } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-// import { startDriver } from "./utils/driver";
 import { useEffect } from "react";
 
 const Navbar = () => {
@@ -40,7 +39,6 @@ const Navbar = () => {
                 position="sticky"
                 top="0"
                 zIndex="1000"
-
             >
                 <Text cursor="pointer" className="gradient-clip" fontSize="xl" fontWeight="bold" onClick={() => { router.push('/') }}>
                     Islam365.online
@@ -72,7 +70,6 @@ const Navbar = () => {
                                     <MenuItem onClick={() => { window.location = 'mailto:islam365online@gmail.com'; }}>Gmail</MenuItem>
                                 </MenuList>
                             </Menu>
-
                         </MenuList>
                     </Menu>
                     <Menu >
@@ -99,6 +96,7 @@ const Navbar = () => {
                     </Menu>
                 </Flex>
                 <IconButton
+                    className="hamburger-menu_m"
                     aria-label="Toggle navigation"
                     icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                     display={{ base: "flex", md: "none" }}
@@ -110,7 +108,7 @@ const Navbar = () => {
                     <Flex direction="column" gap="2" align="start">
                         <Button color="gray.900" colorScheme="transparent" onClick={() => { router.push('/') }}>Home</Button>
                         <Menu>
-                            <MenuButton className="about" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                            <MenuButton className="about_m" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                                 About
                             </MenuButton>
                             <MenuList>
@@ -119,7 +117,7 @@ const Navbar = () => {
                             </MenuList>
                         </Menu>
                         <Menu>
-                            <MenuButton className="contact" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                            <MenuButton className="contact_m" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                                 Contact
                             </MenuButton>
                             <MenuList>
@@ -135,13 +133,11 @@ const Navbar = () => {
                                         <MenuItem onClick={() => { window.location = 'mailto:islam365online@gmail.com'; }}>Gmail</MenuItem>
                                     </MenuList>
                                 </Menu>
-
-
                             </MenuList>
                         </Menu>
 
                         <Menu >
-                            <MenuButton className="content" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                            <MenuButton className="content_m" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                                 Age Wise Content
                             </MenuButton>
                             <MenuList>
@@ -151,7 +147,7 @@ const Navbar = () => {
                             </MenuList>
                         </Menu>
                         <Menu >
-                            <MenuButton className="additional" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
+                            <MenuButton className="additional_m" colorScheme="transparent" as={Button} color="gray.900" rightIcon={<FaChevronDown />}>
                                 Additionals
                             </MenuButton>
                             <MenuList>

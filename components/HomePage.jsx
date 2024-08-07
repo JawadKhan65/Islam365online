@@ -69,7 +69,7 @@ const Home = () => {
 
     return (
         <>
-            <Box width="100vw" position={'absolute'} className='background'>
+            <Box height={'auto'} width="100vw" position={'absolute'} className='background'>
                 <Container maxW="container.xl" position={'relative'}>
                     <Flex direction="column" align="center" justify="center"
                         width="100%"
@@ -98,7 +98,7 @@ const Home = () => {
                         </Box>
                     </Flex>
                 </Container>
-                <Container height={'100vh'} fontFamily="sans-serif" maxW="container.xl" py={8}>
+                <Container height={'auto'} fontFamily="sans-serif" maxW="container.xl" py={8}>
 
                     <Flex direction="column" align="center" justify="center" height="auto" width="100%" gap={4}>
                         <Heading as="h1" size="xl" fontFamily="sans-serif"
@@ -107,7 +107,7 @@ const Home = () => {
                         </Heading>
 
                         <VStack mb={2}>
-                            <MotionText
+                            <MotionBox
                                 fontSize="xl"
                                 textAlign="center"
                                 fontWeight="thin"
@@ -130,7 +130,7 @@ const Home = () => {
 
 
 
-                            </MotionText>
+                            </MotionBox>
                         </VStack>
 
 
@@ -150,7 +150,10 @@ const Home = () => {
                                 className="card sidebar1"
                                 animate={controls}
                                 height='20vh'
-
+                                display='flex'
+                                flexDirection='column'
+                                justifyContent='center'
+                                alignItems='center'
                                 initial={{ opacity: 0, y: 50 }}
                             >
                                 <Heading fontFamily="sans-serif" as="h3" size="lg" alignItems={'center'} justifyContent={'center'} mb={2}> AI-Powered Learning</Heading>
@@ -160,7 +163,10 @@ const Home = () => {
                                 width={cardWidth}
                                 p={6}
                                 height='20vh'
-
+                                display='flex'
+                                flexDirection='column'
+                                justifyContent='center'
+                                alignItems='center'
                                 borderWidth="1px"
                                 borderRadius="md"
                                 boxShadow="lg"
@@ -178,7 +184,10 @@ const Home = () => {
                             </MotionBox>
                             <MotionBox
                                 height='20vh'
-
+                                display='flex'
+                                flexDirection='column'
+                                justifyContent='center'
+                                alignItems='center'
                                 width={cardWidth}
                                 p={6}
                                 borderWidth="1px"
@@ -199,7 +208,10 @@ const Home = () => {
 
                             <MotionBox
                                 height='20vh'
-
+                                display='flex'
+                                flexDirection='column'
+                                justifyContent='center'
+                                alignItems='center'
                                 width={cardWidth}
                                 p={6}
                                 borderWidth="1px"
@@ -225,6 +237,7 @@ const Home = () => {
 
                     <Footer />
                 </Box>
+
                 <Box position="fixed" bottom={4} left={4} zIndex="1">
                     <Button
                         className='chat'
@@ -241,6 +254,9 @@ const Home = () => {
                         <ChatIcon mr={1} /> Chat with Islam365 GPT
                     </Button>
                 </Box>
+
+
+
             </Box >
         </>
     );

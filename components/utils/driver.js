@@ -1,6 +1,47 @@
-
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
+
+
+
+const mobileSteps = driver({
+    showProgress: true,
+    steps: [
+        { element: '.hamburger-menu_m', popover: { title: 'Menu', description: 'Open the menu to navigate' } },
+        { element: '.about_m', popover: { title: 'About', description: 'Explore About us.' } },
+        { element: '.contact_m', popover: { title: 'Our Contacts here', description: 'See how you can contact us and know about us.' } },
+        { element: '.content_m', popover: { title: 'Wide range of content', description: 'Wide range of content we have here.' } },
+        { element: '.additional_m', popover: { title: 'Additional resources', description: 'Additional resources that can help.' } },
+        { element: '.chat_m', popover: { title: 'Start Chat with the Chatbot', description: 'Chat about Islam with our Islam365 GPT.' } },
+        {
+            element: '.sidebar1', popover: {
+                title: 'AI-Powered Learning', description: 'Discover personalized learning modules and resources tailored to your needs.'
+            },
+
+        },
+        {
+            element: '.sidebar2', popover: {
+                title: 'AI-Powered Guidance', description: ' Our advanced AI system extracts relevant knowledge from Islamic books and provides you with precise answers to your questions.This innovative approach ensures you receive accurate and valuable insights quickly, enhancing your learning journey.'
+            }
+        },
+        {
+            element: '.sidebar3', popover: {
+                title: 'AI-Powered Guidance', description: ' Join a supportive community of learners and seekers. Engage in discussions, attend virtual events, and access a wealth of resources designed to assist you in your spiritual and educational journey. Our platform fosters a sense of belonging and provides the support you need to grow.'
+            }
+        },
+        {
+            element: '.sidebar4', popover: {
+                title: 'Blogs', description: 'You can find latest Search by People as a Blog Post.'
+            }
+        },
+
+        { element: '.footer', popover: { title: 'Information', description: 'You can find here all the information about us.' } },
+
+    ],
+    smoothScroll: true,
+})
+
+
+
 
 const driverObj = driver({
     showProgress: true,
@@ -40,6 +81,12 @@ const driverObj = driver({
 
 });
 
-export const startDriver = () => {
-    driverObj.drive();
-};
+
+export function startDriver() {
+    const isMobile = window.innerWidth <= 768;
+    const steps = isMobile ? mobileSteps : driverObj;
+
+
+    steps.drive()
+
+}

@@ -13,16 +13,16 @@ const Footer = () => {
             color="white"
 
 
-            py={10}
+
             width="100vw"
             position="relative"
-            bottom={0}
+
         >
             <Flex
                 direction={{ base: 'column', md: 'row' }}
                 justify="space-between"
                 align="center"
-                maxW="1200px"
+                maxW="full"
 
                 px={6}
             >
