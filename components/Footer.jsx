@@ -13,9 +13,11 @@ const Footer = () => {
             color="white"
 
 
+            // height={'auto'}
+            // pos={'relative'}
 
-            width="100vw"
-            position="relative"
+            width="full"
+
 
         >
             <Flex
@@ -23,7 +25,7 @@ const Footer = () => {
                 justify="space-between"
                 align="center"
                 maxW="full"
-
+                py={5}
                 px={6}
             >
                 <Box>
@@ -35,7 +37,7 @@ const Footer = () => {
                         Your reliable source for Islamic knowledge.
                     </Text>
                 </Box>
-                <Flex mr={2} ml={2} wrap={'wrap'} mt={{ base: 4, md: 0 }}>
+                <Flex justifyContent={'center'} mr={2} wrap={'wrap'} mt={{ base: 4, md: 0 }}>
                     <Link href="/about/about-us" mx={2} _hover={{ textDecoration: 'underline' }}>
                         About Us
                     </Link>

@@ -89,8 +89,8 @@ const Navbar = () => {
                             Additionals
                         </MenuButton>
                         <MenuList>
-                            <MenuItem onClick={() => { router.push('/resources') }}>Resources</MenuItem>
-                            <MenuItem onClick={() => { router.push('/prayer-times') }}>Prayer Times</MenuItem>
+                            <MenuItem onClick={() => { router.push('/additionals/resource') }}>Resources</MenuItem>
+                            <MenuItem onClick={() => { router.push('/additionals/prayer-times') }}>Prayer Times</MenuItem>
                             <MenuItem onClick={() => { router.push('/additionals/blog') }}>Blog</MenuItem>
                         </MenuList>
                     </Menu>
@@ -151,8 +151,8 @@ const Navbar = () => {
                                 Additionals
                             </MenuButton>
                             <MenuList>
-                                <MenuItem onClick={() => { router.push('/resources') }}>Resources</MenuItem>
-                                <MenuItem onClick={() => { router.push('/prayer-times') }}>Prayer Times</MenuItem>
+                                <MenuItem onClick={() => { router.push('/additionals/resource') }}>Resources</MenuItem>
+                                <MenuItem onClick={() => { router.push('/additionals/prayer-times') }}>Prayer Times</MenuItem>
                                 <MenuItem onClick={() => { router.push('/additionals/blog') }}>Blog</MenuItem>
                             </MenuList>
                         </Menu>

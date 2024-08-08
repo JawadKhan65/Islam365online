@@ -207,7 +207,7 @@ const Chat = () => {
                         isQues ?
                             <Heading className="gradient-clip m-2">
                                 Islam-365
-                            </Heading> : <Heading className="gradient-clip m-2">
+                            </Heading> : <Heading display={'flex'} justifyContent={'center'} flexWrap={'wrap'} className="gradient-clip m-2">
                                 Start Chat with Islam-365
                             </Heading>
                     }

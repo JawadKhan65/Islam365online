@@ -59,23 +59,7 @@ const AboutUs = () => {
                         </Flex>
                     </Container>
                 </Box>
-                <Box position="fixed" bottom={4} left={4} zIndex="1">
-                    <Button
-                        className='chat'
-                        bg="linear-gradient(90deg,#2d302f,#f50f3d,#ff54ca )"
-                        color={'white'}
-                        onClick={handleChatClick}
-                        _hover={{
-                            bg: "linear-gradient(90deg,#ba4cf5,#f50f3d,#ff54ca )",
 
-                            transition: 'transform 0.3s',
-                            fontWeight: 600,
-                        }}
-                        fontFamily="sans-serif"
-                    >
-                        <ChatIcon mr={1} /> Chat with Islam365 GPT
-                    </Button>
-                </Box>
 
                 <Footer />
 
