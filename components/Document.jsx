@@ -120,6 +120,9 @@ const DocumentsList = ({ documents }) => {
             <VStack spacing={4} align="stretch">
                 <Heading m={2} as={'h2'} fontSize={'lg'}>
                     <span className="text-fuchsia-600">Fetched :</span> Resources | References | Others
+                    <br></br>
+                    <br></br>
+                    <span className='italic text-blue-600 font-medium shadow-md shadow-slate-500 bg-transparent border-none'>Click the &apos;Source&apos; to view Book</span>
                 </Heading>
                 {docs.map((doc, index) => (
                     <DocumentCard
