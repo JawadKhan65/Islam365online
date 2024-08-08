@@ -98,7 +98,7 @@ const Home = () => {
                         </Box>
                     </Flex>
                 </Container>
-                <Container height={'100vh'} fontFamily="sans-serif" maxW="container.xl" py={8}>
+                <Container mb={5} pos={'relative'} height={'full'} fontFamily="sans-serif" maxW="container.xl" py={8}>
 
                     <Flex direction="column" align="center" justify="center" height="auto" width="100%" gap={4}>
                         <Heading as="h1" size="xl" fontFamily="sans-serif"
@@ -107,7 +107,7 @@ const Home = () => {
                         </Heading>
 
                         <VStack mb={2}>
-                            <MotionText
+                            <MotionBox
                                 fontSize="xl"
                                 textAlign="center"
                                 fontWeight="thin"
@@ -130,11 +130,11 @@ const Home = () => {
 
 
 
-                            </MotionText>
+                            </MotionBox>
                         </VStack>
 
 
-                        <HStack spacing={4} align="stretch" flexWrap="wrap" justify="center">
+                        <HStack height={'full'} mb={5} spacing={4} align="stretch" flexWrap="wrap" justify="center">
 
                             <MotionBox
                                 width={cardWidth}
@@ -149,7 +149,10 @@ const Home = () => {
                                 _focus={{ outline: 'none' }}
                                 className="card sidebar1"
                                 animate={controls}
-                                height='20vh'
+                                display="flex"
+                                justifyContent="center"
+                                alignItems="center"
+                                height='30vh'
 
                                 initial={{ opacity: 0, y: 50 }}
                             >
@@ -159,8 +162,10 @@ const Home = () => {
                             <MotionBox
                                 width={cardWidth}
                                 p={6}
-                                height='20vh'
-
+                                height='30vh'
+                                display="flex"
+                                justifyContent="center"
+                                alignItems="center"
                                 borderWidth="1px"
                                 borderRadius="md"
                                 boxShadow="lg"
@@ -177,8 +182,10 @@ const Home = () => {
 
                             </MotionBox>
                             <MotionBox
-                                height='20vh'
-
+                                height='30vh'
+                                display="flex"
+                                justifyContent="center"
+                                alignItems="center"
                                 width={cardWidth}
                                 p={6}
                                 borderWidth="1px"
@@ -198,7 +205,10 @@ const Home = () => {
                             </MotionBox>
 
                             <MotionBox
-                                height='20vh'
+                                height='30vh'
+                                display="flex"
+                                justifyContent="center"
+                                alignItems="center"
 
                                 width={cardWidth}
                                 p={6}
@@ -220,11 +230,10 @@ const Home = () => {
                         </HStack>
 
                     </Flex>
-                </Container>
-                <Box className='footer'>
 
-                    <Footer />
-                </Box>
+                </Container>
+
+
                 <Box position="fixed" bottom={4} left={4} zIndex="1">
                     <Button
                         className='chat'
@@ -240,6 +249,9 @@ const Home = () => {
                     >
                         <ChatIcon mr={1} /> Chat with Islam365 GPT
                     </Button>
+                </Box>
+                <Box className='footer'>
+                    <Footer className='.footer' />
                 </Box>
             </Box >
         </>

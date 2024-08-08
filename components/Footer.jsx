@@ -12,18 +12,19 @@ const Footer = () => {
             bg="linear-gradient(300deg,#f614fa, #fa1442 , #ff1b6b )"
             color="white"
 
+            // height={'auto'}
+            // pos={'relative'}
 
-            py={10}
-            width="100vw"
-            position="relative"
-            bottom={0}
+            width="full"
+
+
         >
             <Flex
                 direction={{ base: 'column', md: 'row' }}
                 justify="space-between"
                 align="center"
-                maxW="1200px"
-
+                maxW="full"
+                py={5}
                 px={6}
             >
                 <Box>
@@ -35,7 +36,7 @@ const Footer = () => {
                         Your reliable source for Islamic knowledge.
                     </Text>
                 </Box>
-                <Flex mr={2} ml={2} wrap={'wrap'} mt={{ base: 4, md: 0 }}>
+                <Flex justifyContent={'center'} mr={2} wrap={'wrap'} mt={{ base: 4, md: 0 }}>
                     <Link href="/about/about-us" mx={2} _hover={{ textDecoration: 'underline' }}>
                         About Us
                     </Link>

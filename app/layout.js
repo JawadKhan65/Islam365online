@@ -3,6 +3,8 @@ import "./globals.css";
 import { Providers } from './providers'
 import Navbar from "../components/Navbar";
 import { TypingProvider } from "@/context/TypingContext";
+import Footer from "@/components/Footer";
+import ChatButton from "@/components/ChatButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -31,6 +33,7 @@ export default function RootLayout({ children }) {
               <Navbar />
               {children}
             </TypingProvider>
+            <ChatButton />
 
 
           </Providers>
